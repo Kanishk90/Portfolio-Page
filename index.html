@@ -1,49 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/css/main.css" />
-    <title></title>
-  </head>
-  <body>
-    <!-- This is a header section -->
-    <div class="header">
-      <div class="menu">
-        <ul class="nav-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">My Resume</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact info</a></li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Data Science Enthusiast Portfolio</title>
+  <style>
+    :root {
+      --primary: #234567;
+      --accent: #16a085;
+      --bg-light: #f8f9fa;
+      --text-dark: #223;
+      --card-bg: #fff;
+      --shadow: 0 4px 12px rgba(60,60,100,0.08);
+    }
+    body { font-family:"Segoe UI",Arial,sans-serif; margin:0; background: var(--bg-light); color: var(--text-dark);}
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 48px 0 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .profile-photo {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      object-fit: cover;
+      margin: 0 auto 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: block;
+    }
+    header h1 { margin-bottom: 8px; font-size: 2.5rem; }
+    nav { margin-top: 8px; }
+    nav a { color: #fff; text-decoration: none; margin:0 11px; font-weight:bold; }
+    nav a:hover { color: var(--accent);}
+    .container { max-width: 940px; margin: auto; padding: 28px 12px;}
+    section {margin-bottom:38px;}
+    .grid { display: flex; gap: 18px; flex-wrap:wrap;}
+    .card { background: var(--card-bg); border-radius: 13px; box-shadow: var(--shadow); padding: 22px; flex: 1 1 220px; min-width: 220px; transition: transform 0.14s;}
+    .card:hover { transform: translateY(-7px) scale(1.02); background: #eef7f7;}
+    .card strong {color: var(--accent);}
+    .skill-badge { display: inline-block; background: var(--accent); color: #fff; padding:4px 11px; border-radius: 12px; margin: 3px 9px 3px 0; font-size: .98em; font-weight: 600; }
+    .subject-list, .cert-list, .interests-list, .languages-list, .awards-list { margin:0; padding:0; }
+    .subject-list li, .cert-list li, .interests-list li, .languages-list li, .awards-list li { margin-bottom:10px; list-style:none;}
+    .magazine-grid { display:flex; gap:18px; flex-wrap:wrap;}
+    .mag-card { background:#f1f8fa; border-radius:12px; box-shadow: var(--shadow); flex: 1 1 220px; min-width:220px; padding:18px; margin-bottom: 7px; transition:background 0.2s,transform .12s;}
+    .mag-card:hover { background:#d6f5ed; transform: scale(1.03);}
+    .mag-card h3 { margin-top:0;}
+    /* Extended Info Columns */
+    .ext-grid { display: flex; gap: 18px; flex-wrap:wrap;}
+    .ext-card { background: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); padding: 16px; flex: 1 1 190px; min-width:190px;}
+    /* Contact & Footer */
+    form input, form textarea { width: 100%; padding: 9px; margin:4px 0 18px; border: 1px solid #ccc; border-radius:7px; font-size:1em; background:#f6f6f6; resize:vertical;}
+    form input[type=submit] { background: var(--primary); color: #fff; font-weight:700; border: none; cursor:pointer;}
+    form input[type=submit]:hover { background: var(--accent);}
+    footer { background: var(--primary); color: #fff; text-align:center; padding: 14px 0; margin-top:30px;}
+    @media (max-width:600px) {
+      .container { padding:12px 3px;}
+      .grid, .magazine-grid, .ext-grid { flex-direction:column; gap:10px; }
+      .card, .mag-card, .ext-card { min-width:100%; }
+      nav a { margin:0 7px; font-size:.98em;}
+      .profile-photo { width:96px; height:96px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <img src="image.jpg" class="profile-photo" alt="Your Name Photo">
+    <p>Data Science Enthusiast · Programmer · Machine Learning Explorer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#magazine">Magazine</a>
+      <a href="#extended">More Info</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        Welcome! I'm passionate about Data Science, ML, and web scraping.<br>
+        Computer Science student, hands-on with open-source, Kaggle, and NPTEL courses.
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card"><span class="skill-badge">Python</span><span class="skill-badge">Pandas</span><span class="skill-badge">NumPy</span><span class="skill-badge">Jupyter</span></div>
+        <div class="card"><span class="skill-badge">Machine Learning</span><span class="skill-badge">Scikit-learn</span><span class="skill-badge">Deep Learning</span></div>
+        <div class="card"><span class="skill-badge">Web Scraping</span><span class="skill-badge">BeautifulSoup</span><span class="skill-badge">Selenium</span></div>
+        <div class="card"><span class="skill-badge">Data Viz</span><span class="skill-badge">Matplotlib</span><span class="skill-badge">Seaborn</span></div>
+        <div class="card"><span class="skill-badge">Git</span><span class="skill-badge">GitHub</span></div>
+        <div class="card"><span class="skill-badge">Google Cloud</span><span class="skill-badge">Kaggle</span></div>
+      </div>
+    </section>
+    <section id="subjects">
+      <h2>Subjects</h2>
+      <div class="card">
+        <ul class="subject-list">
+          <li><strong>Quantum Computing</strong> – Algorithms, Qubits, NPTEL Coursework</li>
+          <li><strong>Machine Learning</strong> – Regression, Classification, Deep Learning, MLOps</li>
+          <li><strong>Data Analysis</strong> – Pandas, Visualizations, Real Estate Analytics</li>
+          <li><strong>Web Scraping</strong> – BeautifulSoup, Projects (Agmarknet)</li>
+          <li><strong>Programming & Algorithms</strong> – LeetCode, Competitive Coding</li>
         </ul>
       </div>
-    </div>
-
-    <!-- This is the main content -->
-
-    <div class="banner-container">
-      <img
-        class="banner-image"
-        src="static/images/sample3.jpg"
-        alt="Your Image"
-      />
-      <!-- Replace 'your-image.jpg' with the path to your image -->
-      <div class="text-container">
-        <h1>Kanishk Kumar</h1>
+    </section>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="card">
+        <ul class="cert-list">
+          <li><strong>NPTEL Quantum Computing Certificate</strong> – 2025</li>
+          <li><strong>Deep Learning Specialization</strong> – Coursera, 2025</li>
+          <li><strong>ML with Python</strong> – Kaggle, 2024</li>
+        </ul>
       </div>
-    </div>
-
-    <!-- This is content inside main Section     -->
-    <div class="header-container">
-      <h1 class="header1">About Me</h1>
-      <!-- Add additional text or elements as needed -->
-    </div>
-
-    <!-- This is main skills section -->
-    <div class="main-info">
-      <img src="static/images/mypic.jpg" alt="Profile picture">
-      <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore accusantium sit, dolores, vitae, esse consectetur est quasi quas nesciunt tempore non natus! Corporis magnam beatae modi! Pariatur rem nesciunt dolorem.</div>
-    </div>
-  </body>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card"><strong>Agmarknet Web Scraper</strong><br>Extracted agricultural market data, handled irregular tables, exported CSVs.<br><a href="https://github.com/yourusername/agmarknet-scraper" target="_blank">GitHub Repo</a></div>
+        <div class="card"><strong>MNIST Classification</strong><br>Handwritten digit classifier with neural networks.<br><a href="https://github.com/yourusername/mnist-classification" target="_blank">GitHub Repo</a></div>
+        <div class="card"><strong>MLOps Pipeline</strong><br>Model versioning via DVC & Google Cloud Storage.<br><a href="https://github.com/yourusername/mlops-pipeline" target="_blank">GitHub Repo</a></div>
+      </div>
+    </section>
+    <section id="magazine">
+      <h2>Magazine</h2>
+      <div class="magazine-grid">
+        <div class="mag-card"><h3>Latest in Data Science</h3><p>Updates on ML models, Kaggle competitions, and data engineering.</p><a href="https://towardsdatascience.com/" target="_blank">Read More</a></div>
+        <div class="mag-card"><h3>Quantum Computing Digest</h3><p>Summaries from NPTEL Quantum Computing coursework.</p><a href="https://nptel.ac.in/" target="_blank">Read More</a></div>
+        <div class="mag-card"><h3>Algorithm Weekly</h3><p>Competitive coding insights and LeetCode progress.</p><a href="#" target="_blank">Read More</a></div>
+      </div>
+    </section>
+    <section id="extended">
+      <h2>More Info</h2>
+      <div class="ext-grid">
+        <div class="ext-card">
+          <strong>Interests</strong>
+          <ul class="interests-list">
+            <li>Open Source Projects</li>
+            <li>Competitive Programming</li>
+            <li>Deep Learning Research</li>
+            <li>Cloud Platforms</li>
+            <li>Education Technology</li>
+          </ul>
+        </div>
+        <div class="ext-card">
+          <strong>Languages</strong>
+          <ul class="languages-list">
+            <li>English (Fluent)</li>
+            <li>Hindi (Native)</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="ext-card">
+          <strong>Awards & Achievements</strong>
+          <ul class="awards-list">
+            <li>Top 10% in Quantum Computing NPTEL (2025)</li>
+            <li>Kaggle Silver Medal (ML Category, 2024)</li>
+            <li>LeetCode Weekly Contest Rank</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">B.Sc. Data Science, IITM Online Degree (Year - Present)</div>
+        <div class="card">NPTEL Quantum Computing Course (2025)</div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <form action="mailto:your.email@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 Your Name. Made with 💡 for Data Science.
+  </footer>
+</body>
 </html>
