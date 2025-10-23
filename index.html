@@ -3,56 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Data Science Enthusiast Portfolio</title>
+  <title>Kanishk Kumar | Data Scientist & ML Explorer</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary: #234567;
       --accent: #16a085;
+      --bg-gradient: linear-gradient(120deg, #234567 60%, #16a085 100%);
       --bg-light: #f8f9fa;
-      --text-dark: #223;
+      --nav-bg: #223;
+      --nav-text: #fff;
       --card-bg: #fff;
-      --shadow: 0 4px 12px rgba(60,60,100,0.08);
+      --shadow: 0 4px 24px rgba(60,60,100,0.12);
     }
-    body { font-family:"Segoe UI",Arial,sans-serif; margin:0; background: var(--bg-light); color: var(--text-dark);}
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: #223;
+    }
     header {
-      background: var(--primary);
+      background: var(--bg-gradient);
       color: #fff;
-      padding: 48px 0 32px;
+      padding-top: 40px;
       text-align: center;
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 16px rgba(35,69,103,.13);
       position: relative;
     }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 32px;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 34px 20px 30px 20px;
+      max-width: 445px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 2;
+    }
     .profile-photo {
-      width: 175px;
-      height: 175px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       border: 4px solid var(--accent);
       object-fit: cover;
-      margin: 0 auto 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: -72px auto 14px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.13);
       display: block;
+      background: #fff;
     }
-    header h1 { margin-bottom: 8px; font-size: 2.5rem; }
-    nav { margin-top: 8px; }
-    nav a { color: #fff; text-decoration: none; margin:0 11px; font-weight:bold; }
-    nav a:hover { color: var(--accent);}
-    .container { max-width: 940px; margin: auto; padding: 28px 12px;}
-    section {margin-bottom:38px;}
-    .grid { display: flex; gap: 18px; flex-wrap:wrap;}
-    .card { background: var(--card-bg); border-radius: 13px; box-shadow: var(--shadow); padding: 22px; flex: 1 1 220px; min-width: 220px; transition: transform 0.14s;}
-    .card:hover { transform: translateY(-7px) scale(1.02); background: #eef7f7;}
-    .card strong {color: var(--accent);}
-    .skill-badge { display: inline-block; background: var(--accent); color: #fff; padding:4px 11px; border-radius: 12px; margin: 3px 9px 3px 0; font-size: .98em; font-weight: 600; }
-    .subject-list, .cert-list, .interests-list, .languages-list, .awards-list { margin:0; padding:0; }
-    .subject-list li, .cert-list li, .interests-list li, .languages-list li, .awards-list li { margin-bottom:10px; list-style:none;}
-    .magazine-grid { display:flex; gap:18px; flex-wrap:wrap;}
-    .mag-card { background:#f1f8fa; border-radius:12px; box-shadow: var(--shadow); flex: 1 1 220px; min-width:220px; padding:18px; margin-bottom: 7px; transition:background 0.2s,transform .12s;}
-    .mag-card:hover { background:#d6f5ed; transform: scale(1.03);}
-    .mag-card h3 { margin-top:0;}
-    /* Extended Info Columns */
-    .ext-grid { display: flex; gap: 18px; flex-wrap:wrap;}
-    .ext-card { background: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); padding: 16px; flex: 1 1 190px; min-width:190px;}
-    /* Resume Button */
+    .hero h1 {
+      margin: 0 0 2px;
+      font-size: 2.45rem;
+      font-weight: 800;
+      letter-spacing: .025em;
+      color: var(--primary);
+    }
+    .hero-role {
+      font-size: 1.22em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .hero-desc {
+      font-size: 1.04em;
+      line-height: 1.48;
+      margin: 10px 0 20px;
+      color: #334;
+    }
+    .location-email {
+      font-size: .99em;
+      color: #588;
+      margin-bottom: 18px;
+    }
+    .profile-icons {
+      margin-top: 2px;
+    }
+    .icon-link {
+      color: var(--primary);
+      background: #eaf7f6;
+      margin: 0 7px;
+      font-size: 1.54rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 2px 10px rgba(22,160,133,.10);
+      transition: .18s;
+      border: 2px solid transparent;
+      position: relative;
+      top: 0;
+    }
+    .icon-link:hover,
+    .icon-link:focus {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--primary);
+      top: -2px;
+      box-shadow: 0 4px 18px rgba(22,160,133,0.25);
+    }
+    nav {
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--nav-bg);
+      border-radius: 7px;
+      padding: 13px 0 12px 0;
+      box-shadow: 0 1px 7px rgba(35,69,103,.10);
+    }
+    nav a {
+      color: var(--nav-text);
+      background: transparent;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 7px 19px;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: .18s;
+      letter-spacing: .012em;
+      box-shadow: none;
+    }
+    nav a:hover,
+    nav a:focus {
+      background: var(--accent);
+      color: #fff;
+    }
+    .container {
+      max-width: 960px;
+      padding: 38px 12px 0;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 38px;
+    }
+    .grid {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      flex: 1 1 220px;
+      min-width: 220px;
+      transition: .14s;
+    }
+    .card:hover {
+      transform: translateY(-7px) scale(1.02);
+      background: #eef7f7;
+    }
+    .card strong {
+      color: var(--accent);
+    }
+    .skill-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 11px;
+      border-radius: 12px;
+      margin: 3px 9px 3px 0;
+      font-size: .98em;
+      font-weight: 600;
+    }
+    .subject-list,
+    .cert-list,
+    .interests-list,
+    .languages-list,
+    .awards-list {
+      margin: 0;
+      padding: 0;
+    }
+    .subject-list li,
+    .cert-list li,
+    .interests-list li,
+    .languages-list li,
+    .awards-list li {
+      margin-bottom: 10px;
+      list-style: none;
+    }
+    .magazine-grid {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .mag-card {
+      background: #f1f8fa;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      flex: 1 1 220px;
+      min-width: 220px;
+      padding: 18px;
+      margin-bottom: 7px;
+      transition: background 0.2s, transform .12s;
+    }
+    .mag-card:hover {
+      background: #d6f5ed;
+      transform: scale(1.03);
+    }
+    .mag-card h3 {
+      margin-top: 0;
+    }
+    .ext-grid {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .ext-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      flex: 1 1 190px;
+      min-width: 190px;
+    }
     .resume-btn {
       background: var(--accent);
       color: #fff;
@@ -63,37 +237,81 @@
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(60,60,100,0.09);
-      transition: background 0.2s;
+      transition: .2s;
       margin-top: 10px;
       margin-bottom: 8px;
       text-decoration: none;
       display: inline-block;
     }
     .resume-btn:hover,
-    .resume-btn:focus { background: var(--primary); color: #fff;}
-    /* Contact & Footer */
-    form input, form textarea { width: 100%; padding: 9px; margin:4px 0 18px; border: 1px solid #ccc; border-radius:7px; font-size:1em; background:#f6f6f6; resize:vertical;}
-    form input[type=submit] { background: var(--primary); color: #fff; font-weight:700; border: none; cursor:pointer;}
-    form input[type=submit]:hover { background: var(--accent);}
-    footer { background: var(--primary); color: #fff; text-align:center; padding: 14px 0; margin-top:30px;}
-    @media (max-width:600px) {
-      .container { padding:12px 3px;}
-      .grid, .magazine-grid, .ext-grid { flex-direction:column; gap:10px; }
-      .card, .mag-card, .ext-card { min-width:100%; }
-      nav a { margin:0 7px; font-size:.98em;}
-      .profile-photo { width:96px; height:96px; }
+    .resume-btn:focus {
+      background: var(--primary);
+      color: #fff;
+    }
+    /* Contact form styling */
+    .contact-card { max-width: 900px; margin: 25px auto; background: #fff; padding: 32px 25px 20px 25px; border-radius: 16px; box-shadow: 0 4px 28px rgba(0,0,0,0.10);}
+    .inline-fields { display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap; justify-content: flex-start; }
+    .inline-fields input[type="text"], .inline-fields input[type="email"] { width: 290px; min-width: 110px; padding: 10px 12px; border: 1.5px solid #cfd8dc; border-radius: 5px; font-size: 1em; background: #fafbfc; }
+    .inline-fields textarea { padding: 10px 12px; border: 1.5px solid #cfd8dc; border-radius: 5px; font-size: 1em; background: #fafbfc; min-width: 190px; max-width: 450px; min-height: 38px; max-height: 70px; resize: vertical; margin-right: 20px;}
+    .inline-fields button.submit-btn { width: auto; min-width: 110px; padding: 10px 14px; margin-top: 0; margin-bottom: 0; }
+    @media (max-width: 900px) {
+      .inline-fields { flex-direction: column; gap: 12px; align-items: stretch; }
+      .inline-fields input, .inline-fields textarea, .inline-fields button { width: 100% !important; max-width: 100%;}
+    }
+    @media (max-width: 700px) {
+      .container { padding: 14px 2px; }
+      .grid, .magazine-grid, .ext-grid { flex-direction: column; gap: 10px; }
+      .card, .mag-card, .ext-card { min-width: 100%; }
+      nav { gap: 9px; }
+      nav a { font-size: .97em; padding: 8px 10px; }
+      .hero { padding: 25px 7px 18px 7px; }
+      .profile-photo { width: 75px; height: 75px; }
+      .contact-card { padding: 18px 6px 14px 6px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>KANISHK KUMAR</h1>
-    <img src="120326132.png" class="profile-photo" alt="Your Name Photo">
-    <p>Data Science Enthusiast · Programmer · Machine Learning Explorer</p>
+    <div class="hero">
+      <img src="120326132.png" class="profile-photo" alt="Profile Photo">
+      <h1>Kanishk Kumar</h1>
+      <div class="hero-role">Data Scientist & Machine Learning Explorer</div>
+      <div class="hero-desc">
+        Building insights from data, crafting ML solutions,<br>
+        and loving Python, cloud, and competitive programming.<br>
+        Always coding. Always learning.
+      </div>
+      <div class="location-email">
+        <i class="fas fa-location-dot"></i> Meerut, UP
+        &emsp;
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:kanishkumar@gmail.com" style="color:#16a085;text-decoration:underline;font-weight:500;">kanishkumar@gmail.com</a>
+      </div>
+      <div class="profile-icons">
+        <a href="https://github.com/Kanishk90" target="_blank" title="GitHub" class="icon-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.kaggle.com/kanishk09" target="_blank" title="Kaggle" class="icon-link">
+          <i class="fab fa-kaggle"></i>
+        </a>
+        <a href="https://leetcode.com/u/Kanishk_09/" target="_blank" title="LeetCode" class="icon-link">
+          <i class="fa fa-code"></i>
+        </a>
+        <a href="https://www.hackerrank.com/profile/kanishkumar99" target="_blank" title="HackerRank" class="icon-link">
+          <i class="fab fa-hackerrank"></i>
+        </a>
+        <a href="https://codeforces.com/profile/yourusername" target="_blank" title="Codeforces" class="icon-link">
+          <i class="fas fa-bolt"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kanish99/" target="_blank" title="LinkedIn" class="icon-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#subjects">Subjects</a>
+      <a href="#subjects">Coursework</a>
       <a href="#certifications">Certifications</a>
       <a href="#projects">Projects</a>
       <a href="#magazine">Magazine</a>
@@ -107,30 +325,154 @@
     <section id="about">
       <h2>About Me</h2>
       <div class="card">
-        Welcome! I'm passionate about Data Science, ML, and web scraping.<br>
-        Computer Science student, hands-on with open-source, Kaggle, and NPTEL courses.
+        I am Kanishk Kumar, currently pursuing a B.S. in Data Science and Applications at IIT Madras. With a strong foundation in statistical analysis, machine learning, and software development, I am passionate about leveraging data-driven approaches to solve real-world problems.<br><br>
+        My expertise includes Python programming, modern machine learning frameworks, cloud technologies, and end-to-end data analytics. I have hands-on experience through academic projects, Kaggle competitions, and open-source contributions.<br><br>
+        I am committed to continuous learning, professional growth, and knowledge sharing within the data science community. I thrive in collaborative environments and enjoy translating complex data into actionable insights.
       </div>
     </section>
     <section id="skills">
-      <h2>Skills</h2>
+      <h2>Skills & Tech Stack</h2>
       <div class="grid">
-        <div class="card"><span class="skill-badge">Python</span><span class="skill-badge">Pandas</span><span class="skill-badge">NumPy</span><span class="skill-badge">Jupyter</span></div>
-        <div class="card"><span class="skill-badge">Machine Learning</span><span class="skill-badge">Scikit-learn</span><span class="skill-badge">Deep Learning</span></div>
-        <div class="card"><span class="skill-badge">Web Scraping</span><span class="skill-badge">BeautifulSoup</span><span class="skill-badge">Selenium</span></div>
-        <div class="card"><span class="skill-badge">Data Viz</span><span class="skill-badge">Matplotlib</span><span class="skill-badge">Seaborn</span></div>
-        <div class="card"><span class="skill-badge">Git</span><span class="skill-badge">GitHub</span></div>
-        <div class="card"><span class="skill-badge">Google Cloud</span><span class="skill-badge">Kaggle</span></div>
+        <div class="card">
+          <h3>Programming & Data Handling</h3>
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Java</span>
+          <span class="skill-badge">Pandas</span>
+          <span class="skill-badge">NumPy</span>
+          <span class="skill-badge">Jupyter</span>
+        </div>
+        <div class="card">
+          <h3>Machine Learning & AI</h3>
+          <span class="skill-badge">Machine Learning</span>
+          <span class="skill-badge">Scikit-learn</span>
+          <span class="skill-badge">Deep Learning</span>
+          <span class="skill-badge">TensorFlow</span>
+          <span class="skill-badge">PyTorch</span>
+          <span class="skill-badge">MLOps</span>
+          <span class="skill-badge">Model Deployment</span>
+        </div>
+        <div class="card">
+          <h3>Web Scraping & Automation</h3>
+          <span class="skill-badge">BeautifulSoup</span>
+          <span class="skill-badge">Selenium</span>
+          <span class="skill-badge">Requests</span>
+          <span class="skill-badge">Scrapy</span>
+        </div>
+        <div class="card">
+          <h3>Data Visualization</h3>
+          <span class="skill-badge">Matplotlib</span>
+          <span class="skill-badge">Seaborn</span>
+          <span class="skill-badge">Plotly</span>
+          <span class="skill-badge">Tableau</span>
+          <span class="skill-badge">Power BI</span>
+        </div>
+        <div class="card">
+          <h3>Databases & Data Engineering</h3>
+          <span class="skill-badge">SQL</span>
+          <span class="skill-badge">MySQL</span>
+          <span class="skill-badge">PostgreSQL</span>
+          <span class="skill-badge">SQLite</span>
+          <span class="skill-badge">Data Engineering</span>
+        </div>
+        <div class="card">
+          <h3>Cloud & DevOps</h3>
+          <span class="skill-badge">Google Cloud Platform</span>
+          <span class="skill-badge">DVC</span>
+          <span class="skill-badge">Linux Command Line</span>
+          <span class="skill-badge">Git</span>
+          <span class="skill-badge">GitHub</span>
+        </div>
+        <div class="card">
+          <h3>Platforms & Competitions</h3>
+          <span class="skill-badge">Kaggle</span>
+          <span class="skill-badge">LeetCode</span>
+          <span class="skill-badge">Google Colab</span>
+        </div>
+        <div class="card">
+          <h3>Other Tools</h3>
+          <span class="skill-badge">VS Code</span>
+          <span class="skill-badge">PyCharm</span>
+          <span class="skill-badge">Excel</span>
+        </div>
+      </div>
+    </section>
+    <section id="certifications">
+      <h2>Experience</h2>
+      <div class="card">
+        <ul class="cert-list">
+          <li>
+            <strong>Data Analyst Intern</strong><br>
+            <b>Food Corporation of India (FCI) — via Sharma Associates & Vishnoi and Sons</b><br>
+            <em>June 2025 – Present</em>
+            <ul>
+              <li>Assist in analyzing operational, logistics, and procurement data to support decision-making.</li>
+              <li>Create dashboards and reports using Python, Excel, and SQL.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card"><i>B.S Data Science, IITM Online Degree (2022 - Present)</i><br>Indian Institute of Technology Madras Chennai</div>
+        <div class="card"><i>B.Sc Physics,Chemistry, Mathematics (2018 - 2021)</i><br>IIMT University Meerut Uttar Pradesh</div>
       </div>
     </section>
     <section id="subjects">
-      <h2>Subjects</h2>
+      <h2>Coursework</h2>
       <div class="card">
         <ul class="subject-list">
-          <li><strong>Quantum Computing</strong> – Algorithms, Qubits, NPTEL Coursework</li>
-          <li><strong>Machine Learning</strong> – Regression, Classification, Deep Learning, MLOps</li>
-          <li><strong>Data Analysis</strong> – Pandas, Visualizations, Real Estate Analytics</li>
-          <li><strong>Web Scraping</strong> – BeautifulSoup, Projects (Agmarknet)</li>
-          <li><strong>Programming & Algorithms</strong> – LeetCode, Competitive Coding</li>
+          <li>
+            <strong>Programming in Python</strong>
+            <br>
+            <em>The cornerstone of data science workflows, automation, and analysis. Enables working with popular ML and analytics libraries.</em>
+          </li>
+          <li>
+            <strong>Statistics for Data Science (I & II)</strong>
+            <br>
+            <em>Foundation for data understanding, probability, statistical inference, and hypothesis testing in real-world data analysis.</em>
+          </li>
+          <li>
+            <strong>Mathematics for Data Science (I & II)</strong>
+            <br>
+            <em>Essential for machine learning (linear algebra, calculus), data modeling, and algorithm optimization.</em>
+          </li>
+          <li>
+            <strong>Machine Learning Foundations & Techniques</strong>
+            <br>
+            <em>Teaches algorithms for prediction, classification, clustering, and generalization on data sets.</em>
+          </li>
+          <li>
+            <strong>Deep Learning</strong>
+            <br>
+            <em>Focuses on neural networks and advanced techniques for image, text, and tabular data modeling.</em>
+          </li>
+          <li>
+            <strong>Database Management Systems & Business Data Management</strong>
+            <br>
+            <em>Skills for organizing, querying, and managing large data sets efficiently (SQL, relational databases).</em>
+          </li>
+          <li>
+            <strong>Data Analysis & Visualization</strong>
+            <br>
+            <em>Applied skills with pandas, matplotlib, seaborn for actionable insights and presenting results visually.</em>
+          </li>
+          <li>
+            <strong>Business Analytics & Market Research</strong>
+            <br>
+            <em>Translates analytic results into business decisions; essential for roles combining analytics with strategy.</em>
+          </li>
+          <li>
+            <strong>Tools in Data Science</strong>
+            <br>
+            <em>Exposure to modern tools—Git, DVC, Google Cloud Platform—for collaborative and reproducible work.</em>
+          </li>
+          <li>
+            <strong>Modern Application Development (I & II)</strong>
+            <br>
+            <em>Builds foundational knowledge for deploying data-driven applications and web services.</em>
+          </li>
         </ul>
       </div>
     </section>
@@ -138,18 +480,33 @@
       <h2>Certifications</h2>
       <div class="card">
         <ul class="cert-list">
-          <li><strong>NPTEL Quantum Computing Certificate</strong> – 2025</li>
+          <li>
+            <strong>NPTEL Certificates:</strong>
+            <ul>
+              <li>Introduction to Quantum Computing using Qiskit</li>
+              <li>Development of Soft Skills and Personality</li>
+              <li>Patent Drafting for Beginners</li>
+              <li>Social Networks</li>
+              <li>English Language for Competitive Exams (TOEFL, GRE, SAT)</li>
+            </ul>
+          </li>
           <li><strong>Deep Learning Specialization</strong> – Coursera, 2025</li>
-          <li><strong>ML with Python</strong> – Kaggle, 2024</li>
+          <li><strong>Machine Learning with Python</strong> – Kaggle, 2024</li>
         </ul>
       </div>
     </section>
     <section id="projects">
       <h2>Projects</h2>
       <div class="grid">
-        <div class="card"><strong>Agmarknet Web Scraper</strong><br>Extracted agricultural market data, handled irregular tables, exported CSVs.<br><a href="https://github.com/yourusername/agmarknet-scraper" target="_blank">GitHub Repo</a></div>
-        <div class="card"><strong>MNIST Classification</strong><br>Handwritten digit classifier with neural networks.<br><a href="https://github.com/yourusername/mnist-classification" target="_blank">GitHub Repo</a></div>
-        <div class="card"><strong>MLOps Pipeline</strong><br>Model versioning via DVC & Google Cloud Storage.<br><a href="https://github.com/yourusername/mlops-pipeline" target="_blank">GitHub Repo</a></div>
+        <div class="card"><strong>Agmarknet Web Scraper</strong><br>Extracted agricultural market data, handled irregular tables, exported CSVs.<br>
+          <a href="https://github.com/yourusername/agmarknet-scraper" target="_blank" class="icon-link" style="margin:8px 0 0 0;"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="card"><strong>MNIST Classification</strong><br>Handwritten digit classifier with neural networks.<br>
+          <a href="https://github.com/yourusername/mnist-classification" target="_blank" class="icon-link" style="margin:8px 0 0 0;"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="card"><strong>MLOps Pipeline</strong><br>Model versioning via DVC & Google Cloud Storage.<br>
+          <a href="https://github.com/yourusername/mlops-pipeline" target="_blank" class="icon-link" style="margin:8px 0 0 0;"><i class="fab fa-github"></i></a>
+        </div>
       </div>
     </section>
     <section id="magazine">
@@ -163,7 +520,7 @@
     <section id="resume">
       <h2>Resume</h2>
       <div class="card" style="text-align:center;">
-        <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+        <a href="Resume/Resume23.pdf" download class="resume-btn"><i class="fas fa-cloud-arrow-down"></i> Download Resume</a>
         <p style="margin-top:10px;">View or download my latest CV/Resume as PDF.</p>
       </div>
     </section>
@@ -186,39 +543,35 @@
             <li>English (Fluent)</li>
             <li>Hindi (Native)</li>
             <li>Python</li>
-            <li>C++</li>
+            <li>Java</li>
             <li>SQL</li>
           </ul>
         </div>
         <div class="ext-card">
           <strong>Awards & Achievements</strong>
           <ul class="awards-list">
-            <li>Top 10% in Quantum Computing NPTEL (2025)</li>
-            <li>Kaggle Silver Medal (ML Category, 2024)</li>
-            <li>LeetCode Weekly Contest Rank</li>
+            <li>HackerRank Gold Badge</li>
           </ul>
         </div>
       </div>
     </section>
-    <section id="education">
-      <h2>Education</h2>
-      <div class="grid">
-        <div class="card">B.Sc. Data Science, IITM Online Degree (Year - Present)</div>
-        <div class="card">NPTEL Quantum Computing Course (2025)</div>
-      </div>
-    </section>
     <section id="contact">
       <h2>Contact</h2>
-      <form action="https://formspree.io/f/mYOURCODE" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="4" placeholder="Your Message"></textarea>
-        <input type="submit" value="Send">
-      </form>
+      <div class="contact-card">
+        <form action="https://formspree.io/f/xpwyggre" method="POST">
+          <div class="inline-fields">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send</button>
+          </div>
+          <p id="form-message"></p>
+        </form>
+      </div>
     </section>
   </div>
-  <footer>
-    &copy; 2025 KANISHK KUMAR. Made with 💡 for Data Science.
+  <footer style="text-align: center;">
+    &copy; 2025 KANISHK KUMAR.
   </footer>
 </body>
 </html>
